@@ -356,11 +356,7 @@ h1 {
   width: 35%;
   border: 1px solid #ebeaea;
   position: relative;
-  transition: transform 0.3s ease-in-out;
- }
-
- .card_kitten:hover {
-  transform: scale(1.05);
+  cursor: pointer;
  }
 
  .card_kitten img {
@@ -370,6 +366,18 @@ h1 {
   object-fit: cover;
   position: relative;
  }
+
+.card_kitten:hover img {
+  transform: scale(1.05);
+}
+
+.image_container {
+  overflow: hidden; 
+}
+
+.image_container img {
+  transition: transform 0.3s ease-in-out;
+}
 
  .available {
   width: 75px;
@@ -416,6 +424,7 @@ h1 {
   letter-spacing: 1.5px;
   transition: background-color 0.3s ease-in, color 0.3s ease-in;
   cursor: pointer;
+  z-index: 100000;
  }
 
  .details a {

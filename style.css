@@ -356,7 +356,7 @@ h1 {
   width: 35%;
   border: 1px solid #ebeaea;
   position: relative;
-  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in-out;
  }
 
  .card_kitten:hover {
@@ -401,6 +401,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 50px;
+  font-size: 0.9rem;
  }
 
  .details {

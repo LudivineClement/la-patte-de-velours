@@ -11,6 +11,10 @@ body {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 h2 {
   text-align: center;
   font-family: 'Parisienne', cursive;
@@ -122,8 +126,71 @@ h1 {
   padding: 100px 250px 100px;
 }
 
+.presentation .introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.presentation .introduction p {
+  opacity: 0;
+}
+
+.presentation .introduction p.visible {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes slide-in-from-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.presentation .animate-from-right {
+  animation-name: slide-in-from-right;
+}
+
+.presentation .animate-from-left {
+  animation-name: slide-in-from-left;
+}
+
+.presentation .animate-from-bottom {
+  animation-name: slide-in-from-bottom;
+}
+
 .presentation p {
-  text-align: justify;
+  text-align: center;
   margin-bottom: 15px;
   line-height: 1.6;
 }
@@ -153,6 +220,7 @@ h1 {
 .block_right {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row-reverse;
   gap: 60px;
 }
@@ -203,7 +271,7 @@ h1 {
 }
 
 .block_container {
-  text-align: justify;
+  text-align: left;
 }
 
 .block_container h3 {
@@ -227,6 +295,45 @@ h1 {
   margin-bottom: 5px;
 }
 
+.discover_race {
+  background-image: linear-gradient(to left, rgba(201, 218, 184, 0.8), rgba(225, 237, 215, 0.8));
+  padding: 20px 100px;
+  text-align: center;
+}
+
+.about_ragdoll {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #6B555E;
+  padding: 20px 20px 5px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: url(./assets/pngtree-simple-cute-hand-drawn-cat-paw-background-picture-image_1282891.jpg) no-repeat;
+  background-size: cover;
+}
+
+.about_ragdoll a {
+  width: 150px;
+  text-align: center;
+  display: block;
+  background-color: #6B555E;
+  color: #fff;
+  border: 2px solid transparent;
+  transition: background-color 0.4s ease-in, border 0.4s ease-in; 
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px auto;
+}
+
+.about_ragdoll a:hover {
+  background-color: #fff;
+  color: #6B555E;
+  border: 2px solid #6B555E;
+ }
+
 .quote-slider {
   width: 400px;
   position: relative;
@@ -243,10 +350,10 @@ h1 {
   width: 100%;
   opacity: 0;
   transition: opacity 1s ease;
-  border-left: 4px solid #C9DAB8; /* Couleur de bordure pour les citations */
+  border-left: 4px solid #C9DAB8; 
   background-color: #F8F8F8;
   padding: 20px 55px;
-  text-align: justify;
+  text-align: left;
 }
 
 .quote-slide.active {

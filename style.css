@@ -12,14 +12,13 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 12px; /* Largeur de la poignée */
+  width: 12px;
  background-color: #c9dab8d7;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #6B555E; /* Couleur de la poignée */
-  border-radius: 6px; /* Bordure arrondie */
-  
+  background-color: #6B555E; 
+  border-radius: 6px;
 }
 
 a {
@@ -340,6 +339,67 @@ h1 {
   background-color: #fff;
   color: #6B555E;
   border: 2px solid #6B555E;
+ }
+
+ #discover_kittens {
+  padding: 100px;
+ }
+
+ .main_kittens {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+ }
+
+ .card_kitten {
+  width: 35%;
+  border: 1px solid #ebeaea;
+  position: relative;
+ }
+
+ .card_kitten img {
+  height: 300px;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+ }
+
+ .card_kitten h3 {
+  text-align: center;
+  padding: 20px;
+ }
+
+ .card_kitten p {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 50px;
+ }
+
+ .details {
+  position: absolute;
+  bottom: -27px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  border: 1px solid #ebeaea;
+  padding: 15px 25px;
+  background-color: #fff;
+  letter-spacing: 1.5px;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+  cursor: pointer;
+ }
+
+ .details a {
+  color: #6B555E;
+ }
+
+ .details:hover {
+  background-color: #6B555E;
+ }
+
+ .details:hover a {
+  color: #fff;
  }
 
 .quote-slider {

@@ -11,6 +11,17 @@ body {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 12px; /* Largeur de la poignée */
+ background-color: #c9dab8d7;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #6B555E; /* Couleur de la poignée */
+  border-radius: 6px; /* Bordure arrondie */
+  
+}
+
 a {
   text-decoration: none;
 }
@@ -134,8 +145,16 @@ h1 {
   overflow: hidden;
 }
 
+.presentation p::first-letter {
+  font-size: 2rem;
+  color: #C9DAB8;
+}
+
 .presentation .introduction p {
   opacity: 0;
+  text-align: left;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 .presentation .introduction p.visible {
@@ -187,17 +206,6 @@ h1 {
 
 .presentation .animate-from-bottom {
   animation-name: slide-in-from-bottom;
-}
-
-.presentation p {
-  text-align: center;
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-.presentation p::first-letter {
-  font-size: 2rem;
-  color: #C9DAB8;
 }
 
 .presentation .center_presentation {
@@ -341,6 +349,7 @@ h1 {
   overflow: hidden;
   margin-top: 30px;
   margin-left: 20px;
+  opacity: 0;
 }
 
 .quote-slide {

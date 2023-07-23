@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  color: #6B555E;
+  font-size: 1.1rem;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Parisienne', cursive;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+ h2::before {
+  content: '';
+  display: block;
+  width: 75px;
+  height: 5px;
+  background: #C9DAB8;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 70px 0 100px;
+  margin-top: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  margin-right: 30px;
+  color: #6B555E;
+  position: relative;
+}
+
+.nav a::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  background-color: #C9DAB8;
+  transform: translateY(25px);
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0; 
+}
+
+.nav a:hover::before {
+  transform: translateY(25px);
+  opacity: 1;
+}
+
+.nav a:last-child::before {
+  background: none;
+}
+
+.nav a:last-child {
+  background-color: #C9DAB8;
+  padding: 7px 10px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border 0.3s ease; 
+}
+
+.nav a:last-child:hover {
+  border: 2px solid #C9DAB8;
+  background-color: #fff;
+  color: #C9DAB8;
+}
+
+.background_welcome {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.685), rgba(54, 54, 54, 0.5) 39%, rgba(28, 28, 28, 0.4)), url(./assets/cat-1726028_1280.jpg) fixed center/cover;
+  color: white;
+  padding: 200px 250px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.welcome {
+  font-size: 2.5rem;
+}
+
+h1 {
+  padding-top: 20px;
+  font-family: 'Parisienne', cursive;
+  letter-spacing: 2px;
+  font-size: 5.5rem ;
+}
+
+.animate-opacity {
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1; 
+  }
+}
+
+.slogan {
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1.3rem;
+}
+
+.presentation {
+  padding: 100px 250px 100px;
+}
+
+.presentation p {
+  text-align: justify;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.presentation p::first-letter {
+  font-size: 2rem;
+  color: #C9DAB8;
+}
+
+.presentation .center_presentation {
+  display: block;
+  text-align: right;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+#discover_ragdolls {
+  margin: 0 auto;
+}
+
+.block {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  max-width: 1000px;
+  margin: auto;
+}
+.block_right {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 60px;
+}
+
+.block_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.block_img {
+  border: solid 1px #C9DAB8;
+  margin: 0 auto;
+  position: relative; 
+}
+
+.block_img img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  max-width: 450px;
+  height: 100%;
+}
+
+.block_left .block_img::before {
+  position: absolute;
+  display: block;
+  content: '';
+  border: solid 2px #C9DAB8;
+  top: -30px;
+  left: -30px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.block_right .block_img::before {
+  position: absolute;
+  display: block;
+  content: '';
+  border: solid 2px #C9DAB8;
+  top: -30px;
+  right: -30px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.block_container {
+  text-align: justify;
+}
+
+.block_container h3 {
+  font-family: 'Parisienne', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.block_container p {
+  margin-bottom: 10px;
+}
+
+.block_container li {
+  margin-left: 40px;
+}
+
+.block_container .gp {
+  margin-left: 80px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.quote-slider {
+  width: 400px;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.quote-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  border-left: 4px solid #C9DAB8; /* Couleur de bordure pour les citations */
+  background-color: #F8F8F8;
+  padding: 20px 55px;
+  text-align: justify;
+}
+
+.quote-slide.active {
+  opacity: 1;
+}
+
+blockquote p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: #6B555E;
+}
+
+cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #A98A95;
+}
+
+

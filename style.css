@@ -85,7 +85,9 @@ h2 {
   background-color: #C9DAB8;
   padding: 7px 10px;
   border: 2px solid transparent;
-  transition: background-color 0.3s ease, border 0.3s ease; 
+  transition: background-color 0.3s ease, border 0.3s ease;
+  border-radius: 3px;
+
 }
 
 .nav a:last-child:hover {
@@ -243,6 +245,7 @@ h1 {
   border: solid 1px #C9DAB8;
   margin: 0 auto;
   position: relative; 
+  border-radius: 3px;
 }
 
 .block_img img {
@@ -251,6 +254,7 @@ h1 {
   z-index: 1;
   max-width: 450px;
   height: 100%;
+  border-radius: 3px;
 }
 
 .block_left .block_img::before {
@@ -263,6 +267,8 @@ h1 {
   width: 100%;
   height: 100%;
   z-index: 0;
+  border-radius: 3px;
+
 }
 
 .block_right .block_img::before {
@@ -275,6 +281,8 @@ h1 {
   width: 100%;
   height: 100%;
   z-index: 0;
+  border-radius: 3px;
+
 }
 
 .block_container {
@@ -313,7 +321,7 @@ h1 {
   font-weight: bold;
   color: #6B555E;
   padding: 20px 20px 5px 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background: url(./assets/pngtree-simple-cute-hand-drawn-cat-paw-background-picture-image_1282891.jpg) no-repeat;
   background-size: cover;
@@ -330,7 +338,7 @@ h1 {
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
   margin: 15px auto;
 }
@@ -342,7 +350,7 @@ h1 {
  }
 
  #discover_kittens {
-  padding: 100px;
+  padding: 100px 100px 150px 100px;
  }
 
  .main_kittens {
@@ -357,6 +365,8 @@ h1 {
   border: 1px solid #ebeaea;
   position: relative;
   cursor: pointer;
+  margin-bottom: 100px;
+  border-radius: 3px;
  }
 
  .card_kitten img {
@@ -365,6 +375,8 @@ h1 {
   width: 100%;
   object-fit: cover;
   position: relative;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
  }
 
 .card_kitten:hover img {
@@ -372,7 +384,9 @@ h1 {
 }
 
 .image_container {
-  overflow: hidden; 
+  overflow: hidden;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px; 
 }
 
 .image_container img {
@@ -424,7 +438,7 @@ h1 {
   letter-spacing: 1.5px;
   transition: background-color 0.3s ease-in, color 0.3s ease-in;
   cursor: pointer;
-  z-index: 100000;
+  border-radius: 3px;
  }
 
  .details a {
@@ -439,46 +453,88 @@ h1 {
   color: #fff;
  }
 
-.quote-slider {
-  width: 400px;
-  position: relative;
-  height: 400px;
-  overflow: hidden;
-  margin-top: 30px;
-  margin-left: 20px;
-  opacity: 0;
-}
-
-.quote-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 1s ease;
-  border-left: 4px solid #C9DAB8; 
-  background-color: #F8F8F8;
-  padding: 20px 55px;
-  text-align: left;
-}
-
-.quote-slide.active {
-  opacity: 1;
-}
-
-blockquote p {
-  font-size: 1rem;
-  line-height: 1.6;
-  font-style: italic;
-  color: #6B555E;
-}
-
-cite {
+ .more_kittens {
+  width: 280px;
+  text-align: center;
+  text-transform: uppercase;
   display: block;
-  margin-top: 10px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #A98A95;
+  margin: 0 auto;
+  background-color: #6B555E;
+  color: #fff;
+  border: 2px solid transparent;
+  transition: background-color 0.4s ease-in, border 0.4s ease-in; 
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  letter-spacing: 2px;
+  border-radius: 3px;
+ }
+
+ .more_kittens:hover {
+  background-color: #fff;
+  border: #6B555E 2px solid;
+  color: #6B555E;
+ }
+
+ .main_testimonals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F8F8F8;
+  padding: 50px 200px;
+  gap: 80px;
+ }
+
+ .card_testimonials {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  width: 33%;
+  position: relative;
+  margin-top: 60px;
+ }
+
+ .img_testimonials img {
+  width: 120px;
+  height: 120px;
+  border-radius: 120px;
+  object-fit: cover;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+ }
+
+ .card_testimonials .name {
+  text-transform: uppercase;
+  margin-top: 60px;
+  text-align: center;
+ }
+
+ .card_testimonials .description {
+  text-align: center;
+  font-weight: 200;
+  font-size: 1rem;
+  margin-top: 5px;
+ }
+
+ .quotes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+ .quotes img {
+  width: 32px;
+  height: 32px;
+  margin-top: 20px;
+  
+ }
 
+ .body_testimonials {
+  margin: 15px 0;
+  font-size: 0.9rem;
+  text-align: center;
+ }
+
+ 

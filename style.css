@@ -166,7 +166,7 @@ h1 {
 
 .presentation .animate-from-right {
   transform: translateX(100%);
-  transition: transform 1s ease-in, opacity 1s ease-in;
+  transition: transform 1.5s ease-in, opacity 1.5s ease-in;
 }
 
 .presentation .animate-from-right.active {
@@ -176,7 +176,7 @@ h1 {
 
 .presentation .animate-from-left {
   transform: translateX(-100%);
-  transition: transform 1s ease-in, opacity 1s ease-in;
+  transition: transform 2s ease-in, opacity 2s ease-in;
 }
 
 .presentation .animate-from-left.active {
@@ -186,7 +186,7 @@ h1 {
 
 .presentation .animate-from-bottom {
   transform: translateY(100%);
-  transition: transform 1s ease-in, opacity 1s ease-in;
+  transition: transform 2.2s ease-in, opacity 2.2s ease-in;
 }
 
 .presentation .animate-from-bottom.active {
@@ -320,6 +320,7 @@ h1 {
   background: url(./assets/pngtree-simple-cute-hand-drawn-cat-paw-background-picture-image_1282891.jpg) no-repeat;
   background-size: cover;
 }
+
 
 .about_ragdoll a {
   width: 300px;

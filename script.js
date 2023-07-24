@@ -5,48 +5,24 @@ window.addEventListener('scroll', ()=> {
 
   const topElementToTopViewport= slidingDiscoverRace.getBoundingClientRect().top;
 
-  if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.80) {
+  if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.70) {
     slidingDiscoverRace.classList.add('active')
   }
 })
 
-const slidingAnimateFromRight =  document.querySelector('.animate-from-right');
+const animateElements = document.querySelectorAll('.animate-from-right, .animate-from-left, .animate-from-bottom');
 
-window.addEventListener('scroll', ()=> {
-  const {scrollTop, clientHeight} = document.documentElement;
+window.addEventListener('scroll', () => {
+  const { scrollTop, scrollHeight } = document.documentElement;
 
-  const topElementToTopViewport= slidingAnimateFromRight.getBoundingClientRect().top;
+  animateElements.forEach((element) => {
+    const topElementToTopViewport = element.getBoundingClientRect().top;
 
-  if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.90) {
-    slidingAnimateFromRight.classList.add('active')
-  }
-})
-
-const slidingAnimateFromLeft =  document.querySelector('.animate-from-left');
-
-window.addEventListener('scroll', ()=> {
-  const {scrollTop, clientHeight} = document.documentElement;
-
-  const topElementToTopViewport= slidingAnimateFromLeft.getBoundingClientRect().top;
-
-  if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.90) {
-    slidingAnimateFromLeft.classList.add('active')
-  }
-})
-
-const slidingAnimateFromBottom =  document.querySelector('.animate-from-bottom');
-
-window.addEventListener('scroll', ()=> {
-  const {scrollTop, clientHeight} = document.documentElement;
-
-  const topElementToTopViewport= slidingAnimateFromBottom.getBoundingClientRect().top;
-
-  if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.90) {
-    slidingAnimateFromBottom.classList.add('active')
-  }
-})
-
-
+    if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - scrollHeight * 0.5) {
+      element.classList.add('active');
+    }
+  });
+});
 
 
 

@@ -1,17 +1,51 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const slides = document.querySelectorAll(".quote-slide");
-  let currentSlide = 0;
+const slidingDiscoverRace =  document.querySelector('.discover_race');
 
-  function showSlide() {
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
+window.addEventListener('scroll', ()=> {
+  const {scrollTop, clientHeight} = document.documentElement;
+
+  const topElementToTopViewport= slidingDiscoverRace.getBoundingClientRect().top;
+
+  if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.80) {
+    slidingDiscoverRace.classList.add('active')
   }
+})
 
-  showSlide();
+const slidingAnimateFromRight =  document.querySelector('.animate-from-right');
 
-  setInterval(showSlide, 5000);
-});
+window.addEventListener('scroll', ()=> {
+  const {scrollTop, clientHeight} = document.documentElement;
+
+  const topElementToTopViewport= slidingAnimateFromRight.getBoundingClientRect().top;
+
+  if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.90) {
+    slidingAnimateFromRight.classList.add('active')
+  }
+})
+
+const slidingAnimateFromLeft =  document.querySelector('.animate-from-left');
+
+window.addEventListener('scroll', ()=> {
+  const {scrollTop, clientHeight} = document.documentElement;
+
+  const topElementToTopViewport= slidingAnimateFromLeft.getBoundingClientRect().top;
+
+  if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.90) {
+    slidingAnimateFromLeft.classList.add('active')
+  }
+})
+
+const slidingAnimateFromBottom =  document.querySelector('.animate-from-bottom');
+
+window.addEventListener('scroll', ()=> {
+  const {scrollTop, clientHeight} = document.documentElement;
+
+  const topElementToTopViewport= slidingAnimateFromBottom.getBoundingClientRect().top;
+
+  if (scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.90) {
+    slidingAnimateFromBottom.classList.add('active')
+  }
+})
+
 
 
 

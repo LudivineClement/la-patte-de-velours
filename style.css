@@ -46,11 +46,17 @@ h2 {
 }
 
 .header {
+  position: fixed;
+  width: 100%;
+  top:-20px;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 70px 0 100px;
+  padding: 15px 70px 10px 100px;
   margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 
 .nav a {
@@ -158,55 +164,34 @@ h1 {
   line-height: 1.6;
 }
 
-.presentation .introduction p.visible {
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-
-
-@keyframes slide-in-from-right {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-from-left {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-from-bottom {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 .presentation .animate-from-right {
-  animation-name: slide-in-from-right;
+  transform: translateX(100%);
+  transition: transform 1s ease-in, opacity 1s ease-in;
+}
+
+.presentation .animate-from-right.active {
+  transform: translateX(0%);
+  opacity: 1;
 }
 
 .presentation .animate-from-left {
-  animation-name: slide-in-from-left;
+  transform: translateX(-100%);
+  transition: transform 1s ease-in, opacity 1s ease-in;
+}
+
+.presentation .animate-from-left.active {
+  transform: translateX(0%);
+  opacity: 1;
 }
 
 .presentation .animate-from-bottom {
-  animation-name: slide-in-from-bottom;
+  transform: translateY(100%);
+  transition: transform 1s ease-in, opacity 1s ease-in;
+}
+
+.presentation .animate-from-bottom.active {
+  transform: translateX(0%);
+  opacity: 1;
 }
 
 .presentation .center_presentation {
@@ -255,6 +240,7 @@ h1 {
   max-width: 450px;
   height: 100%;
   border-radius: 3px;
+  z-index: 1;
 }
 
 .block_left .block_img::before {
@@ -314,6 +300,14 @@ h1 {
   background-image: linear-gradient(to left, rgba(201, 218, 184, 0.8), rgba(225, 237, 215, 0.8));
   padding: 20px 100px;
   text-align: center;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.discover_race.active {
+  transform: translateX(0%);
+  opacity: 1;
 }
 
 .about_ragdoll {
@@ -328,19 +322,21 @@ h1 {
 }
 
 .about_ragdoll a {
-  width: 200px;
+  width: 300px;
   text-align: center;
   display: block;
   background-color: #6B555E;
   color: #fff;
   border: 2px solid transparent;
   transition: background-color 0.4s ease-in, border 0.4s ease-in; 
-  padding: 10px 20px;
+  padding: 10px;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 3px;
   cursor: pointer;
   margin: 15px auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .about_ragdoll a:hover {
@@ -513,7 +509,7 @@ h1 {
 
  .card_testimonials .description {
   text-align: center;
-  font-weight: 200;
+  font-weight: 100;
   font-size: 1rem;
   margin-top: 5px;
  }
@@ -528,13 +524,13 @@ h1 {
   width: 32px;
   height: 32px;
   margin-top: 20px;
-  
  }
 
  .body_testimonials {
   margin: 15px 0;
   font-size: 0.9rem;
   text-align: center;
+  font-weight: 300;
  }
 
  
